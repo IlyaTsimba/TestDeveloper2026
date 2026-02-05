@@ -1,0 +1,159 @@
+/* ==========================================================================
+   Sidebar Container
+   ========================================================================== */
+
+.sidebar {
+    background-color: var(--primary-bg);
+    height: 100%;
+}
+
+/* ==========================================================================
+   Header Section
+   ========================================================================== */
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    flex-shrink: 0;
+}
+
+h1 {
+    color: var(--text-color);
+    cursor: default;
+    margin: 0;
+}
+
+/* ==========================================================================
+   New Note Button
+   ========================================================================== */
+
+.new-note-button {
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+    border-style: none;
+    filter: drop-shadow(var(--shadow));
+    background-color: var(--text-color);
+    transition: all 1s;
+    font-size: 20px;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-note-button:hover {
+    filter: brightness(var(--highlight-brightness));
+    transform: scale(1.25);
+    transition: filter 4s, transform 1s;
+    cursor: pointer;
+}
+
+.new-note-button:active {
+    background-color: var(--button-active-bg);
+    filter: brightness(100%);
+    transition: background-color 0.05s;
+}
+
+/* ==========================================================================
+   Notes List
+   ========================================================================== */
+
+.sidebar-notes {
+    display: block;
+    height: 80vh;
+    overflow-y: auto;
+}
+
+.sidebar-notes::-webkit-scrollbar {
+    display: none;
+}
+
+/* ==========================================================================
+   Individual Note Item
+   ========================================================================== */
+
+.sidebar-note {
+    background-color: var(--secondary-bg);
+    margin: 10px 20px;
+    height: 80px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    filter: drop-shadow(var(--shadow));
+
+    animation: fadeIn 0.3s ease-in-out;
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.2s ease-in-out;
+    flex-shrink: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sidebar-note:hover:not(.active) {
+    filter: brightness(var(--hover-brightness));
+    transform: scale(1.02);
+}
+
+.active {
+    filter: brightness(var(--highlight-brightness));
+}
+
+/* ==========================================================================
+   Note Content (Title & Preview)
+   ========================================================================== */
+
+.sidebar-note-title, .sidebar-note-preview {
+    color: var(--text-color);
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sidebar-note-title {
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.sidebar-note-content {
+    margin-left: 15px;
+    flex-grow: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ==========================================================================
+   Delete Button
+   ========================================================================== */
+
+.delete-button {
+    cursor: pointer;
+    height: 100%;
+    width: 50px;
+    background-color: var(--red);
+    border-style: none;
+    border-radius: 0 10px 10px 0;
+    filter: opacity(0.15);
+    flex-shrink: 0;
+}
+
+.delete-button:hover {
+    filter: opacity(0.5);
+}

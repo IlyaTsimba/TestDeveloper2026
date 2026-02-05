@@ -1,0 +1,8 @@
+{
+  "short_name": "Notes App",
+  "name": "Notes App for Test Developer 2026",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
